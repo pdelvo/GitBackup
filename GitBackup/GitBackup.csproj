@@ -45,6 +45,7 @@
     <Compile Include="BackupNotFoundException.cs" />
     <Compile Include="EmptyBackupChain.cs" />
     <Compile Include="FilterBackupSource.cs" />
+    <Compile Include="GitBackupHelper.cs" />
     <Compile Include="Patch.cs" />
     <Compile Include="FileHelpers.cs" />
     <Compile Include="IBackupSourceFile.cs" />

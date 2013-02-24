@@ -173,6 +173,64 @@ namespace GitBackup.FileBackup
             }
         }
 
+        [Verb(Description = "Creates a new head", Aliases = "ch")]
+        public void CreateHead(
+            [Description("The path of the backup directory")]
+            [Required]
+            string backupPath,
+            [Description("The name of the head")]
+            [Required] 
+            string name,
+            [Description("The identifier the head should point to (can be a backup id or a head name)")]
+            [Required] 
+            string identifier)
+        {
+            var backupRepo = new ZipBackupRepository(backupPath);
+
+            if (backupRepo.HeadExists(name))
+                throw new InvalidOperationException("The head already exists");
+
+            backupRepo.AddHead(name, identifier);
+        }
+
+        [Verb(Description = "Renames a head", Aliases = "rh")]
+        public void RenameHead(
+            [Description("The path of the backup directory")]
+            [Required]
+            string backupPath,
+            [Description("The name of the head")]
+            [Required] 
+            string name,
+            [Description("The new name of the head")]
+            [Required] 
+            string newName)
+        {
+            var backupRepo = new ZipBackupRepository(backupPath);
+
+            if (!backupRepo.HeadExists(name))
+                throw new InvalidOperationException("The head does not exist");
+
+            var value = backupRepo.ResolveIdentifier(name);
+            backupRepo.AddHead(newName, value);
+            backupRepo.RemoveHead(name);
+        }
+
+        [Verb(Description = "Removes a head", Aliases = "rh")]
+        public void RemoveHead(
+            [Description("The path of the backup directory")]
+            [Required]
+            string backupPath,
+            [Description("The name of the head")]
+            [Required] 
+            string name)
+        {
+            var backupRepo = new ZipBackupRepository(backupPath);
+
+            if (!backupRepo.HeadExists(name))
+                throw new InvalidOperationException("The head does not exist");
+            backupRepo.RemoveHead(name);
+        }
+
         [Empty, Help]
         public void Help(string help)
         {

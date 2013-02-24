@@ -33,14 +33,17 @@ namespace GitBackup.FileSystemBackup
 
         public void AddHead(string name, string pointer)
         {
+            if(!GitBackupHelper.VerifyHeadName(name))
+                throw new ArgumentOutOfRangeException("name", "Name is not valid");
             if(HeadExists(name))
                 throw new InvalidOperationException("Head already exists");
-
             File.WriteAllText(SysIO.Path.Combine(Path, "heads", name), pointer);
         }
 
         public void RemoveHead(string name)
         {
+            if (!GitBackupHelper.VerifyHeadName(name))
+                throw new ArgumentOutOfRangeException("name", "Name is not valid");
             if (!HeadExists(name))
                 throw new InvalidOperationException("Head does not exist");
 
@@ -49,6 +52,8 @@ namespace GitBackup.FileSystemBackup
 
         public void UpdateHead(string name, string pointer)
         {
+            if (!GitBackupHelper.VerifyHeadName(name))
+                throw new ArgumentOutOfRangeException("name", "Name is not valid");
             if (!HeadExists(name))
                 throw new InvalidOperationException("Head does not exist");
 
@@ -57,6 +62,8 @@ namespace GitBackup.FileSystemBackup
 
         public bool HeadExists(string name)
         {
+            if (!GitBackupHelper.VerifyHeadName(name))
+                throw new ArgumentOutOfRangeException("name", "Name is not valid");
             return GetHeads ().Any(a => a.ToLower () == name.ToLower ());
         }
 
