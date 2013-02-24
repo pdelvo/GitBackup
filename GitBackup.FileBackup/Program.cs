@@ -16,6 +16,17 @@ namespace GitBackup.FileBackup
             Console.WriteLine("===================================================================");
             Console.WriteLine ();
 
+            //Try to expand the console window 
+            try
+            {
+                Console.WindowWidth = Console.BufferWidth = 150;
+            }
+// ReSharper disable EmptyGeneralCatchClause
+            catch
+// ReSharper restore EmptyGeneralCatchClause
+            {
+            }
+
             Trace.Listeners.Add(new ConsoleTraceListener ());
 
             var instance = new BackupTool ();
