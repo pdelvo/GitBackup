@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitBackup", "GitBackup\GitBackup.csproj", "{8AA2E251-EB5B-415F-BE76-D2C3E99D3C87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitBackup.FileBackup", "GitBackup.FileBackup\GitBackup.FileBackup.csproj", "{A71BE703-D015-47E4-84BF-6FA2AC184CDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitBackup.FileSystemBackup", "GitBackup.FileSystemBackup\GitBackup.FileSystemBackup.csproj", "{67108558-2B32-4791-B6DE-589761F0D24D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Externals", "Externals", "{FC15193C-AF5D-4056-B865-1A35D0E6426C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLAP", "externals\clap\CLAP\CLAP.csproj", "{AE79CD7B-DFFC-4156-913E-63F70A31B7C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{916C25FA-1BD6-4528-B98D-A5408786B1A1}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Release20|Any CPU = Release20|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AA2E251-EB5B-415F-BE76-D2C3E99D3C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AA2E251-EB5B-415F-BE76-D2C3E99D3C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AA2E251-EB5B-415F-BE76-D2C3E99D3C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA2E251-EB5B-415F-BE76-D2C3E99D3C87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AA2E251-EB5B-415F-BE76-D2C3E99D3C87}.Release20|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA2E251-EB5B-415F-BE76-D2C3E99D3C87}.Release20|Any CPU.Build.0 = Release|Any CPU
+		{A71BE703-D015-47E4-84BF-6FA2AC184CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A71BE703-D015-47E4-84BF-6FA2AC184CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A71BE703-D015-47E4-84BF-6FA2AC184CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A71BE703-D015-47E4-84BF-6FA2AC184CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A71BE703-D015-47E4-84BF-6FA2AC184CDB}.Release20|Any CPU.ActiveCfg = Release|Any CPU
+		{A71BE703-D015-47E4-84BF-6FA2AC184CDB}.Release20|Any CPU.Build.0 = Release|Any CPU
+		{67108558-2B32-4791-B6DE-589761F0D24D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67108558-2B32-4791-B6DE-589761F0D24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67108558-2B32-4791-B6DE-589761F0D24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67108558-2B32-4791-B6DE-589761F0D24D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67108558-2B32-4791-B6DE-589761F0D24D}.Release20|Any CPU.ActiveCfg = Release|Any CPU
+		{67108558-2B32-4791-B6DE-589761F0D24D}.Release20|Any CPU.Build.0 = Release|Any CPU
+		{AE79CD7B-DFFC-4156-913E-63F70A31B7C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE79CD7B-DFFC-4156-913E-63F70A31B7C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE79CD7B-DFFC-4156-913E-63F70A31B7C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE79CD7B-DFFC-4156-913E-63F70A31B7C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE79CD7B-DFFC-4156-913E-63F70A31B7C1}.Release20|Any CPU.ActiveCfg = Release20|Any CPU
+		{AE79CD7B-DFFC-4156-913E-63F70A31B7C1}.Release20|Any CPU.Build.0 = Release20|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AE79CD7B-DFFC-4156-913E-63F70A31B7C1} = {FC15193C-AF5D-4056-B865-1A35D0E6426C}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

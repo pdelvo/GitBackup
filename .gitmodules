@@ -1,0 +1,6 @@
+[submodule "externals/clap"]
+	path = externals/clap
+	url = git://github.com/adrianaisemberg/CLAP.git
+[submodule "Externals/clap"]
+	path = Externals/clap
+	url = git://github.com/adrianaisemberg/CLAP.git
