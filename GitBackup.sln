@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{916C25
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitBackup.Test", "GitBackup.Test\GitBackup.Test.csproj", "{A036CE8F-8A79-4F9B-AB1D-EA33C249115C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,12 @@ Global
 		{AE79CD7B-DFFC-4156-913E-63F70A31B7C1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE79CD7B-DFFC-4156-913E-63F70A31B7C1}.Release20|Any CPU.ActiveCfg = Release20|Any CPU
 		{AE79CD7B-DFFC-4156-913E-63F70A31B7C1}.Release20|Any CPU.Build.0 = Release20|Any CPU
+		{A036CE8F-8A79-4F9B-AB1D-EA33C249115C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A036CE8F-8A79-4F9B-AB1D-EA33C249115C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A036CE8F-8A79-4F9B-AB1D-EA33C249115C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A036CE8F-8A79-4F9B-AB1D-EA33C249115C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A036CE8F-8A79-4F9B-AB1D-EA33C249115C}.Release20|Any CPU.ActiveCfg = Release|Any CPU
+		{A036CE8F-8A79-4F9B-AB1D-EA33C249115C}.Release20|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

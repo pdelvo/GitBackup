@@ -8,12 +8,15 @@ namespace GitBackup
         public static IBackupChain GetChain(this IBackup backup, bool followAllLinks = false)
         {
             if (backup == null)
-                return new EmptyBackupChain ();
+                return new EmptyBackupChain();
             return new BackupChain(backup, followAllLinks);
         }
 
         public static void ApplyPatch(this Patch patch, IBackupPrototype prototype)
         {
+            if (patch == null) throw new ArgumentNullException("patch");
+            if (prototype == null) throw new ArgumentNullException("prototype");
+
             Trace.WriteLine("Applying Patch", "Patch");
 
             foreach (var addedOrChangedFile in patch.AddedOrChangedFiles)
