@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO.Compression;
 using System.Linq;
 using CLAP;
 using GitBackup.FileSystemBackup;
@@ -121,7 +122,7 @@ namespace GitBackup.FileBackup
 
             Directory.CreateDirectory(resultPath);
 
-            foreach (var file in chain.GetFiles ())
+            foreach (var file in chain.GetFiles())
             {
                 using (var stream = chain.OpenFile(file))
                 {
@@ -132,6 +133,47 @@ namespace GitBackup.FileBackup
                     using (var fileStream = File.Create(resultingPath))
                     {
                         stream.CopyTo(fileStream);
+                    }
+                }
+            }
+        }
+
+        [Verb(Description = "Pack the current state of a backup", Aliases = "e")]
+        public void Pack(
+            [Description("The path of the backup directory")]
+            [Required]
+            string backupPath,
+            [Description("The path where the resulting zip file should be placed in")]
+            [Required]
+            string resultPath,
+            [Description("The Identifier for the backup (can be a branch or hash)")]
+            [Required]
+            string identifier)
+        {
+            var backupRepo = new ZipBackupRepository(backupPath);
+
+            var backup = backupRepo.GetBackup(identifier);
+
+            var chain = backup.GetChain();
+
+            resultPath = resultPath.Replace("/", "\\");
+
+            Directory.CreateDirectory(Path.GetDirectoryName(resultPath));
+
+            using (var resultFile = ZipFile.Open(resultPath, ZipArchiveMode.Create))
+            {
+                foreach (var file in chain.GetFiles ())
+                {
+                    using (var stream = chain.OpenFile(file))
+                    {
+                        var resultingPath = file.Substring(2);
+
+                        var entry = resultFile.CreateEntry(resultingPath);
+                        
+                        using (var fileStream = entry.Open ())
+                        {
+                            stream.CopyTo(fileStream);
+                        }
                     }
                 }
             }
