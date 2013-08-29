@@ -215,6 +215,23 @@ namespace GitBackup.FileBackup
             }
         }
 
+        [Verb(Description = "List all heads", Aliases = "lh")]
+        public void ListHeads(
+             [Description("The path of the backup directory")]
+            [Required]
+            string backupPath
+            )
+        {
+            var backupRepo = new ZipBackupRepository(backupPath);
+
+            Console.WriteLine("Heads:");
+
+            foreach (var head in backupRepo.GetHeads())
+            {
+                Console.WriteLine("{0} -> {1}", head, backupRepo.ResolveIdentifier(head));
+            }
+        }
+
         [Verb(Description = "Creates a new head", Aliases = "ch")]
         public void CreateHead(
             [Description("The path of the backup directory")]
