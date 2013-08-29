@@ -274,7 +274,7 @@ namespace GitBackup.FileBackup
             backupRepo.RemoveHead(name);
         }
 
-        [Verb(Description = "Removes a head", Aliases = "rh")]
+        [Verb(Description = "Removes a head", Aliases = "dh")]
         public void RemoveHead(
             [Description("The path of the backup directory")]
             [Required]
