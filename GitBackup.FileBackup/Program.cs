@@ -249,7 +249,7 @@ namespace GitBackup.FileBackup
             if (backupRepo.HeadExists(name))
                 throw new InvalidOperationException("The head already exists");
 
-            backupRepo.AddHead(name, identifier);
+            backupRepo.AddHead(name, backupRepo.ResolveIdentifier(identifier));
         }
 
         [Verb(Description = "Renames a head", Aliases = "rh")]
